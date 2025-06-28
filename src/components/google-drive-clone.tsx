@@ -198,7 +198,7 @@ export default function Component() {
   const breadcrumbs = buildBreadcrumbs(mockData, currentFolderId)
 
   const filteredItems =
-    currentFolder?.children?.filter((item: any) => item.name.toLowerCase().includes(searchQuery.toLowerCase())) || []
+    currentFolder?.children?.filter((item: any) => item.name.toLowerCase().includes(searchQuery.toLowerCase())) ?? []
 
   const handleItemClick = (item: any) => {
     if (item.type === "folder") {
@@ -384,8 +384,8 @@ export default function Component() {
                   )}
                   <span className="truncate font-medium">{item.name}</span>
                 </div>
-                <div className="col-span-2 flex items-center text-sm text-gray-400">{item.modified || "-"}</div>
-                <div className="col-span-2 flex items-center text-sm text-gray-400">{item.size || "-"}</div>
+                <div className="col-span-2 flex items-center text-sm text-gray-400">{item.modified ?? "-"}</div>
+                <div className="col-span-2 flex items-center text-sm text-gray-400">{item.size ?? "-"}</div>
                 <div className="col-span-2 flex items-center justify-end">
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
