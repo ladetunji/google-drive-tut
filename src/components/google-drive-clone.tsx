@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { mockFiles, mockFolders } from "~/lib/mock-data"
 import { Button } from "~/components/ui/button"
 import { Input } from "~/components/ui/input"
 import { Card, CardContent } from "~/components/ui/card"
@@ -191,7 +192,7 @@ function buildBreadcrumbs(data: any, targetId: string, path: any[] = []): any[] 
 
 export default function Component() {
   const [currentFolderId, setCurrentFolderId] = useState("root")
-  const [viewMode, setViewMode] = useState<"grid" | "list">("grid")
+  const [viewMode, setViewMode] = useState<"grid" | "list">("list")
   const [searchQuery, setSearchQuery] = useState("")
 
   const currentFolder = findItemById(mockData, currentFolderId)
